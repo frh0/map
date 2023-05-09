@@ -22,28 +22,39 @@ struct ContentView: View {
     
     
     var body: some View {
-
-        Map(coordinateRegion: $viewModel.mapRegion,  showsUserLocation: true)
-//        { location in
-//            MapAnnotation(coordinate: location.coordinate) {
-//                    Circle()
-//                        .stroke(.red, lineWidth: 3)
-//                        .frame(width: 10, height: 44)
+//        ZStack{
+            Map(coordinateRegion: $viewModel.mapRegion,  showsUserLocation: true)
+            .ignoresSafeArea()
+            .accentColor(Color(.systemPink))
+            .onAppear(){
+                viewModel.checkIfLocationServiceIsEnabled()
+                
+            }
+            //        { location in
+            //            MapAnnotation(coordinate: location.coordinate) {
+            //                    Circle()
+            //                        .stroke(.red, lineWidth: 3)
+            //                        .frame(width: 10, height: 44)
+            //
+            //            }
+            //
+            //        }
+            
+            
+              
+//            Button("Start a trip") {
+//                print("starting button")
 //
 //            }
+            
+//            .buttonStyle(.borderedProminent)
+//                .tint(.blue)
+//                .cornerRadius(20)
+//                .offset(x:7, y:250)
 //
 //        }
-      
-        
-        .ignoresSafeArea()
-        .accentColor(Color(.systemPink))
-        .onAppear(){
-            viewModel.checkIfLocationServiceIsEnabled()
-            
-        }
+
     }
-
-
 }
 
 struct ContentView_Previews: PreviewProvider {

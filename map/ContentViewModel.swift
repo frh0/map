@@ -48,7 +48,7 @@ final class ContentViewModel : NSObject, ObservableObject,CLLocationManagerDeleg
                 
 
             case .authorizedAlways, .authorizedWhenInUse:
-                mapRegion = MKCoordinateRegion(center: locationmanger.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                mapRegion = MKCoordinateRegion(center: locationmanger.location!.coordinate, span: MKCoordinateSpan(latitudeDelta:24.7136, longitudeDelta: 46.6753))
                 
                 
             @unknown default:
